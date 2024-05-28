@@ -44,5 +44,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: main-unsigned.ipa
-          path: News.ipa
+          path: TheNews.ipa
           retention-days: 30

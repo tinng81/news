@@ -17,13 +17,14 @@ platform :tvos do
     skip_codesigning: true,
     skip_package_ipa: true,
     archive_path: "App.xcarchive",
+    scheme: "TheNews.tvos",
     )
     FastlaneCore::CommandExecutor.execute(command: "cd .. && mv App.xcarchive/Products/Applications ./Payload")
     zip(
       path: "./Payload",
-      output_path: "News"
+      output_path: "TheNews"
     )
-    sh "cd .. && mv News.zip News.ipa"
+    sh "cd .. && mv TheNews.zip TheNews.ipa"
     sh "cd .. && rm -rf Payload *.xcarchive *.zip || true"
   end
 end
